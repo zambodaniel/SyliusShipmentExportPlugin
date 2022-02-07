@@ -29,7 +29,7 @@ class ShipmentExportController
 	/** @var ParameterBagInterface */
 	private $parameterBag;
 
-	/** @var EngineInterface */
+    /** @var EngineInterface */
 	private $templatingEngine;
 
 	/** @var EntityManager */
@@ -57,7 +57,7 @@ class ShipmentExportController
 	private $translator;
 
 	public function __construct(
-		EngineInterface $templatingEngine,
+        object $templatingEngine,
 		EntityManager $entityManager,
 		FlashBagInterface $flashBag,
 		FactoryInterface $stateMachineFatory,
