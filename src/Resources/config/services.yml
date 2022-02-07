@@ -16,7 +16,7 @@ services:
         public: true
         arguments:
             $parameterBag: '@parameter_bag'
-            $templatingEngine: '@templating'
+            $twig: '@twig'
             $entityManager: '@doctrine.orm.default_entity_manager'
             $flashBag: '@session.flash_bag'
             $stateMachineFatory: '@sm.factory'

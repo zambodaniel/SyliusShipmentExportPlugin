@@ -23,13 +23,14 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Templating\EngineInterface;
 use Symfony\Component\Translation\TranslatorInterface;
+use Twig\Environment;
 
 class ShipmentExportController
 {
 	/** @var ParameterBagInterface */
 	private $parameterBag;
 
-    /** @var EngineInterface */
+    /** @var EngineInterface|Environment */
 	private $templatingEngine;
 
 	/** @var EntityManager */
@@ -57,7 +58,7 @@ class ShipmentExportController
 	private $translator;
 
 	public function __construct(
-        object $templatingEngine,
+        Environment $twig,
 		EntityManager $entityManager,
 		FlashBagInterface $flashBag,
 		FactoryInterface $stateMachineFatory,
@@ -68,7 +69,7 @@ class ShipmentExportController
 		ShipmentRepositoryInterface $shipmentRepository,
 		TranslatorInterface $translator
 	) {
-		$this->templatingEngine = $templatingEngine;
+		$this->templatingEngine = $twig;
 		$this->entityManager = $entityManager;
 		$this->flashBag = $flashBag;
 		$this->stateMachineFatory = $stateMachineFatory;
