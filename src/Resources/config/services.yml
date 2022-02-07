@@ -32,7 +32,7 @@ services:
             - "@mango_sylius.shipment_exporter"
 
     MangoSylius\ShipmentExportPlugin\Model\ShipmentExporterInterface:
-        factory: 'MangoSylius\ShipmentExportPlugin\Factory\ShipmentExportFactory:getExporter'
+        factory: 'MangoSylius\ShipmentExportPlugin\Factory\ShipmentExportFactory::getExporter'
 
     mango_sylius.shipment_exporter:
         class: Sylius\Component\Registry\ServiceRegistry
